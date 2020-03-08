@@ -1,0 +1,285 @@
+{% load  static %}
+<!doctype html>
+<html>
+<head>
+<style>
+        #wrapper{min-width: 100vh;
+                display: flex;
+                min-height: 100vh; /*1vh表示浏览器高度的1%，100vh为浏览器高度，感觉这个挺好的*/
+                flex-direction: column;/*灵活的项垂直显示*/}
+        #content{flex: 1;}
+        #footer{height: 80px;
+            background-color: #0d78e6;}
+    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>网站主页</title>
+<link rel="shortcut icon" href="{% static './img/Electron_shell_001_Hydrogen_-_no_label.png' %}" type="image/x-icon">
+<link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static './js/fancybox/jquery.fancybox.css' %}" type="text/css" media="screen" />
+<link href="{% static './css/style.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static './css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static './css/animate.css' %}" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static './css/csscarousel.css' %}"><!--滑动图片的css-->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="{% static './js/respond-1.1.0.min.js' %}"></script>
+    <script src="{% static './js/html5shiv.js' %}"></script>
+    <script src="{% static  './js/html5element.js'%}"></script>
+<![endif]-->
+
+</head>
+<!--导航栏-->
+<header id="header_wrapper" style="border-top-width: 0px;" >
+  <div class="container"  >
+    <div class="header_box">
+      <div class="logo" style="margin-top:0px;"><a href="#"><img src="{% static './img/xiaohui.png' %}" width="200" "  alt="logo"></a></div>
+	  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+	    <div id="main-nav" class="collapse navbar-collapse navStyle" style="padding-top:15px;">
+			<ul class="nav navbar-nav" id="mainNav">
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '主页' %}" class="scroll-link">首页</a></li>
+			  <li class="active" ><a style="font-size: 2em; font-weight: lighter" href='#' class="scroll-link">研究方向</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#service" class="scroll-link">成员介绍</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '新闻' %}" class="scroll-link">氢能资讯</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#clients" class="scroll-link">研究成果</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#team" class="scroll-link">课题组新闻</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#contact" class="scroll-link">联系我们</a></li>
+			</ul>
+      </div>
+	 </nav>
+    </div>
+  </div>
+</header>
+<!--导航栏-->
+
+<div id="wrapper">
+    <!--主体-->
+    <div id="content">
+        <style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+#title{
+    text-align: left;
+    color: #31b0d5;
+    font-size: 2em;
+    padding: 2vw;
+}
+#zw{padding: 2vw ;
+    font-size: 1.5em;
+    line-height:50px;
+    text-align: left;
+    text-indent:2em;
+}
+</style>
+        <div class="container" align="center" style="width: 90vw ;padding-top: 100px;padding-bottom: 100px">
+            <div class="card">
+  <div class="card-body" >
+      <h2 style="color: #31b0d5; padding-top: 50px"><b>研究方向介绍</b></h2>
+      <h3 id="title"  style=" padding-bottom: 0px">一、团队概况</h3>
+      <p id="zw" >
+      氢安全研究团队前身为清华大学热能工程系柯道友（David M Christopher）教授的课题组，主要
+      成员为李雪芳博士。自2011年起，依托国家重点基础研究发展计划（973项目）“危险化学
+      品事故全过程遥测预警的关键科学问题研究”项目，课题组开  始进行以推动氢能大规模商
+      业化应用为目标的氢安全研究，是国内最早进行专门氢安全研究的团队之一。
+      目前，氢安全研究团队依托山东大学热科学与工程研究中心和清华大学能源与动力工程系，继续进
+      行氢安全研究，近年来已获得国家自然科学基金、中国博士后科学基金、山东省自然科学
+      基金等多项国家级和省部级基金项目资助。已发表氢安全相关的研究论文数十篇。
+       在合作研究方面，团队与美国Sandia国家实验室保持良好的合作关系，团队负责人李雪芳博士曾
+      先后两次赴该实验室参与美国能源部（DOE）资助的氢能与燃料电池项目研究。此外，团队还与国家
+      电投集团等国内知名企业开展了氢安全联合研究。
+      团队现有教授1名，助理研究员1名，博士研究生2名，硕士研究生10名。</p>
+      <!--2主要成员-->
+      <div>
+      <h3 id="title">二、主 要 成 员</h3>
+           <img align="center" src="{% static './img/DM.png' %}" alt="Avatar" width="250" height="300"">
+           <h4 align="center"><b>David M Christopher 教授</b></h4>
+           <h5 align="center">清华大学能源与动力工程系</h5>
+           <p id="zw">美国普渡大学机械工程博士，历任Lafayette学院副教授、清华大学教授，
+               博士生导师，清华大学学报编辑。曾获中国国家“友谊奖”和清华大学友谊奖。主持和参与多项国家重点研发计划
+               和国家自然科学基金项目。研究领域包括氢安全、CFD数值模拟方法、对流传热传质、沸腾换热等。</p>
+               <br>
+           <img align="center" src="{% static './img/LXF.png' %}" alt="Avatar" width="250" height="300" >
+           <h4 align="center"><b>李雪芳  博士</b></h4>
+           <h5 align="center">山东大学热科学与工程研究中心</h5>
+           <p id="zw">清华大学工程热物理博士，美国Sandia国家实验室访问学者，硕士生导师，入选山东大学青年学者
+               未来计划。主持国家自然科学基金、山东省自然科学基金、中国博士后科学基金面上项目等多项国家级、省部级科
+               研课题和国防科研课题，
+                发表学术论文二十余篇。主要研究领域包括氢能与氢安全、CFD数值模拟方法、微流控、人工智能图像处理与模式
+               识别等。</p>
+           <img align="center"src="{% static './img/LCH.png' %}" alt="Avatar" width="250" height="300">
+           <h4 align="center"><b>刘晨辉  博士</b></h4>
+           <h5 align="center">美国国家研究委员会</h5>
+           <p id="zw">爱荷华州立大学博士，美国国家研究委员会学者。主持美国联邦公路局资助项目一项，发表学
+               术论文二十余篇。主要研究领域包括交通安全、自然驾驶行为分析、新能源汽车发展、交通仿真与控制、时空统计等。</p>
+      </div>
+      <!--2主要成员-->
+      <!--3研究方向-->
+      <div>
+      <h3 id="title"> 三、研 究 方 向</h3>
+          <br>
+          <p style="font-size: 1.5em ;text-align: left" >
+          <b style="padding: 30px" >1、高压氢气泄漏研究</b></p>
+          <img src="{% static './img/H1.jpg' %}"  align="center" alt="H1">
+          <br>
+          <div class="row">
+          <ul class="about-us col-md-6 col-md-offset-2" style="text-align: left">
+             <li class="points"style="font-size: 1.5em">高压氢气储罐动态泄漏过程分析</li>
+             <li class="points"style="font-size: 1.5em">氢气射流浓度场激光诊断技术测量（激光Rayleigh散射技术）</li>
+             <li class="points"style="font-size: 1.5em">高压氢气射流理论模型研究</li>
+             <li class="points"style="font-size: 1.5em">高压氢气射流激波结构定量测量（纹影法）</li>
+             <li class="points"style="font-size: 1.5em">高压氢气射流工程模型构建</li>
+             <li class="points"style="font-size: 1.5em">高度欠膨胀氢气射流数值模拟研究</li>
+             <li class="points"style="font-size: 1.5em">通过矩形喷嘴的高压氢气射流实验研究</li>
+             <li class="points"style="font-size: 1.5em">非轴对称氢气射流数值模拟研究和轴转换现象研究</li></ul>
+           </div>
+
+          <p style="font-size: 1.5em ;text-align: left" >
+          <b style="padding: 30px">2、氢泄漏场景分析研究</b></p>
+          <img src="{% static './img/H2.jpg' %}"  align="center" alt="H1">
+            <br>
+          <div class="row">
+          <ul class="about-us col-md-6 col-md-offset-2" style="text-align: left">
+             <li class="points"style="font-size: 1.5em">氢气射流冲击障碍物研究</li>
+             <li class="points"style="font-size: 1.5em">燃料电池汽车氢气泄漏分析与事故应急处理研究</li>
+             <li class="points"style="font-size: 1.5em">加氢站内氢气泄漏扩散研究</li>
+             <li class="points"style="font-size: 1.5em">大型地下停车场内氢气泄漏模型实验</li>
+             <li class="points"style="font-size: 1.5em">在实验验证基础上的真实地下停车场内氢气泄漏数值模拟研究</li>
+             <li class="points"style="font-size: 1.5em">基于无线传感器网络和深度学习方法的泄漏源定位技术研究</li>
+          </ul>
+           </div>
+          <p style="font-size: 1.5em ;text-align: left" >
+          <b style="padding: 30px">3、液氢与低温压缩氢泄漏研究</b></p>
+          <img src="{% static './img/H3.jpg' %}"  align="center" alt="H1">
+            <br>
+          <div class="row">
+          <ul class="about-us col-md-6 col-md-offset-2" style="text-align: left">
+             <li class="points"style="font-size: 1.5em">液氢泄漏浓度场和温度场测量（激光Raman散射技术）</li>
+             <li class="points"style="font-size: 1.5em">Raman散射图像去噪与分析</li>
+             <li class="points"style="font-size: 1.5em">低温氢泄漏理论模型研究</li>
+          </ul>
+           </div>
+
+          <p style="font-size: 1.5em ;text-align: left" >
+          <b style="padding: 30px" >4、氢安全QRA研究</b></p>
+          <img src="{% static './img/H4.jpg' %}"  align="center" alt="H1">
+            <br>
+          <div class="row">
+          <ul class="about-us col-md-6 col-md-offset-2" style="text-align: left">
+             <li class="points"style="font-size: 1.5em">氢安全相关物理模型研究</li>
+             <li class="points"style="font-size: 1.5em">氢安全量化风险评价（QRA）研究软件平台开发（HyRAM）</li>
+             <li class="points"style="font-size: 1.5em">基于CFD计算和HyRAM的氢安全风险分析</li>
+             <li class="points"style="font-size: 1.5em">加氢站量化风险评价和安全距离研究</li>
+             <li class="points"style="font-size: 1.5em">加氢站建设成本分析和安全优化设计（拟）</li>
+          </ul>
+           </div>
+
+          <p style="font-size: 1.5em ;text-align: left" >
+          <b style="padding: 30px">5、微流控研究</b></p>
+          <img src="{% static './img/H5.jpg' %}"  align="center" alt="H1">
+            <br>
+          <div class="row">
+          <ul class="about-us col-md-6 col-md-offset-2" style="text-align: left">
+             <li class="points"style="font-size: 1.5em">微通道内液滴/气泡生成可视化实验</li>
+             <li class="points"style="font-size: 1.5em">微液滴在非牛顿流体中生成数值模拟及预测模型分析</li>
+             <li class="points"style="font-size: 1.5em">微通道内两相混合</li>
+             <li class="points"style="font-size: 1.5em">Micro-PIV技术及微通道内流固耦合研究</li>
+
+          </ul>
+           </div>
+        </div>
+      <!--3研究方向-->
+      <!--4研究条件-->
+      <div>
+      <h3 id="title"> 四、研究条件</h3>
+          <div class="row">
+          <ul class="about-us col-md-8 col-md-offset-2" style="text-align: justify; margin-top: 0px">
+             <li class="points"style="font-size: 1.5em">已建成最高压力达35MPa的高压泄漏实验系统，包括高压气源 、气体增压泵、反馈控制系统、高精度喷嘴、碳纤维全缠绕复合气瓶、微型浓度传感器等</li>
+             <li class="points"style="font-size: 1.5em">已建成地下停车场1:20模型实验系统，可以对燃料电池汽车氢 泄漏和扩散问题进行实验测试（HyRAM）</li>
+             <li class="points"style="font-size: 1.5em">已建成微流控研究可视化实验系统，包括精密压力控制器、 显微镜、高速摄像机、示波记录仪等，可对微通道内流体流动进行拍摄记录j</li>
+             <li class="points"style="font-size: 1.5em">具有6台高性能计算机，可以用于大型数值模拟计算。团队成 员熟练掌握Fluent、SolidWorks、ICEM、OpenFOAM、HyRAM、Python等必备的研究软件和编程语言</li>
+             <li class="points"style="font-size: 1.5em">团队具备良好的国际化环境，与美国Sandia实验室、加拿大UQTR 、德国KIT等知名研究机构和高校有良好的合作关系</li>
+          </ul>
+           </div>
+      </div>
+      <!--4研究条件-->
+      <!--5科研项目-->
+      <div>
+      <h3 id="title"> 五、科研项目</h3>
+          <br>
+          <div class="row">
+          <ul class="about-us col-md-8 col-md-offset-2" style="text-align: justify ; margin-top: 0px">
+             <li class="points"style="font-size: 1.5em">国家自然科学基金面上项目：氢燃料储存设备中高压氢气泄漏的理论及实验研究</li>
+             <li class="points"style="font-size: 1.5em">国家自然科学基金青年项目：圆形/非圆形截面喷嘴高压氢气泄漏射流的实验与模型研究</li>
+             <li class="points"style="font-size: 1.5em">中国博士后科学基金项目：高压氢气泄漏两区域流动模型研究及其实验验证</li>
+             <li class="points"style="font-size: 1.5em">山东省自然科学基金项目：高压氢气泄漏理论模型和数值模拟研究及实验验证</li>
+             <li class="points"style="font-size: 1.5em">中央高校基本科研业务费项目：受限空间内高压氢气泄漏的数值模拟和实验研究</li>
+             <li class="points"style="font-size: 1.5em">国防科研课题（图像处理与模式识别）方向</li>
+          </ul>
+           </div>
+      </div>
+      <!--5科研项目-->
+
+
+
+
+      <!--4研究条件-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+        </div>
+    </div>
+    <!--主体-->
+
+    <!--脚标-->
+    <div id="footer" style="text-align: center">
+                    <p style="font-size: 1.15vw; font-family: '微软雅黑 Light';color:whitesmoke; padding-top: 23px">
+                    <img src="{% static './img/地址.png' %}" width="2%" alt="地址">&nbsp;&nbsp;地址:济南市经十路17923号山东大学千佛山校区
+                    &nbsp;&nbsp;<img src="{% static './img/电话.png' %}" alt="电话"width="2%">&nbsp;&nbsp;电话:+86 531 88399000
+                    &nbsp;&nbsp;<img src="{% static './img/邮箱.png' %}" alt="邮箱"width="2%">&nbsp;&nbsp;邮箱：abc@sdu.edu.cn
+
+                     &nbsp;&nbsp;&copy; 2020 山东大学热科学与工程研究中心 All Rights Reserved 版权所有</p>
+                </div>
+    <!--脚标-->
+</div>
+
+
+

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load  static %}
+{{ form.media }}
+
+{% block 主体 %}
+
+<h1 style="padding: 30px;font-size: 3vmax;color: #0d78e6">氢能资讯</h1>
+    <table class="table table-hover">
+        {% for foo in form.all %}
+    <thread >
+    <tr >
+        <th scope="col" style="text-align: left;padding-left: 100px">
+
+         <a style="font-size: 2vmax" href="{{foo.id}}">◆ &nbsp;{{ foo.title }}</a>
+
+        </th>
+    </tr>
+    </thread>
+    {% endfor %}
+    </table>
+{#       # {% autoescape off %}#}
+{##}
+{##}
+{#{% endautoescape %}#}
+
+
+{% endblock  %}

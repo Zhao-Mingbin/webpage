@@ -1,0 +1,422 @@
+{% load  static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>网站主页</title>
+<link rel="shortcut icon" href="{% static './img/Electron_shell_001_Hydrogen_-_no_label.png' %}" type="image/x-icon">
+<link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static './js/fancybox/jquery.fancybox.css' %}" type="text/css" media="screen" />
+<link href="{% static './css/style.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static './css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static './css/animate.css' %}" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static './css/csscarousel.css' %}"><!--滑动图片的css-->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="{% static './js/respond-1.1.0.min.js' %}"></script>
+    <script src="{% static './js/html5shiv.js' %}"></script>
+    <script src="{% static  './js/html5element.js'%}"></script>
+<![endif]-->
+ 
+</head>
+<body>
+
+<!--导航栏Header_section-->
+
+<header id="header_wrapper" style="border-top-width: 0px;" >
+  <div class="container"  >
+    <div class="header_box">
+      <div class="logo" style="margin-top:0px;"><a href="#"><img src="{% static './img/xiaohui.png' %}" width="200" "  alt="logo"></a></div>
+	  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+	    <div id="main-nav" class="collapse navbar-collapse navStyle" style="padding-top:15px;">
+			<ul class="nav navbar-nav" id="mainNav">
+			  <li class="active"><a style="font-size: 2em; font-weight: lighter" href="#hero_section" class="scroll-link">首页</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '研究方向' %}" class="scroll-link">研究方向</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#service" class="scroll-link">成员介绍</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '新闻' %}" class="scroll-link">氢能资讯</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#clients" class="scroll-link">研究成果</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#team" class="scroll-link">课题组新闻</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="#contact" class="scroll-link">联系我们</a></li>
+			</ul>
+      </div>
+	 </nav>
+    </div>
+  </div>
+</header>
+
+<!--导航栏Header_section-->
+
+
+<!--滑动图片-->
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+  <!-- 指示符 -->
+  <ul class="carousel-indicators " style='padding-left: 13.5em'  >
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+
+    </div>
+    <div class="carousel-item">
+      <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+
+    </div>
+    <div class="carousel-item">
+      <img src="{% static './img/background.png' %}">
+        <br>
+    </div>
+      <div class="top_left_cont zoomIn wow animated" style="padding-top: 12em">
+              <h2>山东大学热科学与工程研究中心 <br> <strong>课题组网站</strong></h2>
+                <div class="underline"></div>
+              <p>瞻天下以為師 歷寒暑求自成 沐風雨而芬芳<br/> </p>
+              <a href="#service" class="read_more2">探索更多</a> </div>
+        </div>
+
+  <!-- 左右切换按钮 -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<!--滑动图片-->
+
+<!--研究方向-->
+
+<section id="aboutUs">
+<style type="text/css">
+            .cardBox {
+                width: 1400px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                text-align: left;
+                float: left;
+                margin-right: 10px;
+                padding: 5px;
+                padding-top: 15px;
+                border-radius: 10px;
+            }
+
+            .headerBox {
+                color: #fff;
+                padding: 10px;
+                font-size: 15px;
+                height: 60px;
+            }
+
+            .bodyBox {
+                padding: 10px;
+            }
+
+            .bodyBox p {
+                margin-left: 5px;
+            }
+        </style>
+<div class="inner_wrapper aboutUs-container fadeInLeft animated wow">
+  <div class="container">
+    <h2>研究方向</h2>
+	<h6>目前有两大主要研究方向，分别为氢安全领域研究以及微流控技术研究</h6>
+  <div class="cardBox mb-12" style="max-width: 1300px;padding-bottom: 15px">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{% static './img/Hydrogen-Safety.jpg' %}" class="card-img" alt="hydrogen safety" style="padding-top: 5ex">
+    </div>
+    <div class="col-md-8" style="background-color: powderblue ;right:20px" >
+      <div class="card-body" style="padding: 20px">
+        <P class="card-title" style="font-size: 2.5em;color: black"> 氢安全研究</P>
+        <p class="card-text" style="font-size: 1.5em; line-height:1.5em;">安全问题是氢能大规模商业化应用之前必须要充分研究的关键问题。在氢气的生产、运输、储存和应用等各个阶段，都有相关的安全问题亟待研究。氢安全研究涵盖氢腐蚀、高压泄漏、燃烧和爆炸等各个方面，
+            在此基础上建立的技术标准与规范将为氢能经济的实现提供有力的支持与保障。在严格按照相关操作规程和使用规范的条件下，氢气是一种较为安全的理想燃料。氢作为航天燃料已经有几十年的历史，在工业领域也有着长期的安全使用经验。目前世界范围内氢安全研究也日益受到重视，
+            其中比较著名的有美国Sandia国家实验室、欧洲联合研究中西（JRC）、英国Ulster大学和日本汽车标准国际化中心（JASIC）等。 我国包括清华大学在内的诸多高校和科研单位也已经开始跟进。因此，未来大规模的氢能应用是完全可行和必要的，氢安全研究也必将为此提供坚实的基础。
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="cardBox mb-12" style="max-width: 1300px; margin-top:30px;padding-left: 30px;padding-right: 10px
+;padding-bottom: 15px">
+  <div class="row no-gutters" >
+
+    <div class="col-md-8" style="background-color: powderblue " >
+      <div class="card-body" style="padding: 20px">
+        <p class="card-title" style="font-size: 2.5em;color: black">微流控技术研究</p>
+        <p class="card-text" style="font-size: 1.5em; line-height:1.5em;"> 微流控（Microfluidics），是一种精确控制和操控微尺度流体，尤其特指亚微米结构的技术，又称其为芯片实验室(Lab-on-a-Chip)或微流控芯片技术。是把生物、化学、医学分析过程的样品制备、反应、分离、检测
+            等基本操作单元集成到一块微米尺度的芯片上，自动完成分析全过程。由于它在生物、
+            化学、医学等领域的巨大潜力，已经发展成为一个生物、化学、医学、流体、电子、材料
+            、机械等学科交叉的崭新研究领域。由于微米级的结构，流体在微流控芯片中显示和产生
+            了与宏观尺度不同的特殊性能，因此发展出独特的分析产生的性能。同时还有着体积轻巧
+            、使用样品及试剂量少、能耗低，且反应速度快、可大量平行处理及可即用即弃等优点。
+
+        </p>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="{% static './img/microfluid.png' %}" class="card-img" alt="hydrogen safety" height="360  ">
+    </div>
+  </div>
+  </div>
+  </div> 
+  </div>
+</section>
+
+<!--研究方向-->
+
+
+<!--成员介绍-->
+<section  id="service">
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+p{
+    padding: 10px;
+}
+
+.container {
+    padding: 2px 16px;
+}
+</style>
+  <div class="container">
+    <h2>主要成员介绍</h2>
+	<h6>团队现有教授1名，助理研究员1名，博士研究生2名，硕士研究生10名。</h6>
+    <div class="container marketing">
+      <div class="row">
+        <div class="col-md-4 ">
+            <div class='card'>
+          <img style='padding-top: 15px;margin-left: 50px'src="{% static './img/DM.png' %}" alt="Avatar" width="250" height="300"">
+                    <h4 align="center"><b>David M Christopher 教授</b></h4>
+              <h5 align="center">清华大学能源与动力工程系</h5>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;美国普渡大学机械工程博士，历任Lafayette学院副教授、清华大学教授，博士生导师，清华大学学报编辑。曾获中国国家“友谊奖”和清华大学友谊奖。主持和参与多项国家重点研发计划和国家自然科学基金项目。研究领域包括氢安全、CFD数值模拟方法、对流传热传质、沸腾换热等。
+                </p>
+                <br>
+                <br>
+            </div>
+          </div><!--dm-->
+          <div class="col-md-4 ">
+              <div class='card'>
+          <img style='padding-top: 15px;margin-left: 50px;'src="{% static './img/LXF.png' %}" alt="Avatar" width="250" height="300" >
+
+            <h4 align="center"><b>李雪芳  博士</b></h4>
+              <h5 align="center">山东大学热科学与工程研究中心</h5>
+            <p style="padding-bottom: 25px">&nbsp;&nbsp;&nbsp;&nbsp; 清华大学工程热物理博士，美国Sandia国家实验室访问学者，硕士生导师，入选山东大学青年学者未来计划。主持国家自然科学基金、山东省自然科学基金、中国博士后科学基金面上项目等多项国家级、省部级科研课题和国防科研课题，
+                发表学术论文二十余篇。主要研究领域包括氢能与氢安全、CFD数值模拟方法、微流控、人工智能图像处理与模式识别等。</p>
+
+        </div>
+     </div><!--LXF-->
+          <div class="col-md-4 ">
+              <div class='card'>
+          <img style='padding-top: 15px;margin-left: 50px'src="{% static './img/LCH.png' %}" alt="Avatar" width="250" height="300">
+                      <h4 align="center"><b>刘晨辉  博士</b></h4>
+              <h5 align="center">美国国家研究委员会</h5>
+            <p style="padding-bottom: 10px">&nbsp; &nbsp; &nbsp; &nbsp;爱荷华州立大学博士，美国国家研究委员会学者。主持美国联邦公路局资助项目一项，发表学术论文二十余篇。主要研究领域包括交通安全、自
+                然驾驶行为分析、新能源汽车发展、交通仿真与控制、时空统计等。</p>
+                  <br>
+                  <br>
+                  <br>
+
+        </div>
+        </div><!--LCH-->
+      </div> 
+    </div>
+  </div>
+</section>
+<!--成员介绍-->
+
+
+
+
+<!-- Portfolio -->
+<section id="Portfolio" class="content">
+
+  <!-- Container -->
+  <div class="container portfolio_title">
+
+    <!-- Title -->
+    <div class="section-title">
+      <h2>氢能资讯</h2>
+        <h6>分享与氢能的安全应用相关的技术和资讯，关注学术和行业动态  </h6>
+    <!--/Title -->
+
+  </div>
+  <!-- Container -->
+
+  <!-- 按钮 -->
+  <div class="portfolio">
+
+    <div id="filters" class="sixteen columns">
+      <ul class="clearfix">
+        <li><a id="all" href="#" data-filter="*" class="active">
+          <h5>All</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".prototype">
+          <h5>Prototype</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".design">
+          <h5>Design</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".android">
+          <h5>Android</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".appleIOS">
+          <h5>Apple IOS</h5>
+          </a></li>
+        <li><a class="" href="#" data-filter=".web">
+          <h5>Web App</h5>
+          </a></li>
+      </ul>
+    </div>
+    <!--/Portfolio Filters -->
+  </div>
+  <!--正文预留 -->
+  <div id="project_container">
+    <div class="clear"></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <div id="project_data"></div>
+  </div>
+
+
+</section>
+<!--/Portfolio -->
+
+
+<!--Footer-->
+<footer class="footer_wrapper" id="contact">
+  <div class="container">
+    <section class="page_section contact" id="contact">
+      <div class="contact_section">
+        <h2>联系我们</h2>
+	<h6>如果您有合作想或者想要与我们取得联系，请留下您的信息和联系方式</h6>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-4 wow fadeInLeft">
+		 <div class="contact_info">
+                            <div class="detail">
+                                <h4>地址</h4>
+                                <p>济南市经十路17923号山东大学千佛山校区</p>
+                            </div>
+                            <div class="detail">
+                                <h4>电话</h4>
+                                <p>+86 531 88399000</p>
+                            </div>
+                            <div class="detail">
+                                <h4>邮箱</h4>
+                                <p>support@sdu.edu.com</p>
+                            </div>
+                            <div class="detail">
+                                <h4>公众号</h4>
+                                <a href="#"><img src="{% static './img/erweima.jpg' %}"
+                  width="40%" alt="erweima"></a>
+                            </div>
+                        </div>
+
+
+
+          <ul class="social_links">
+            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
+            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 wow fadeInLeft delay-06s">
+          <div class="form">
+
+		  		<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
+		<form name="sentMessage" id="contactForm"  novalidate>
+		<h3>Contact Form</h3>
+		<div class="control-group">
+		<div class="controls">
+		<input type="text" class="form-control input-text"
+		placeholder="Full Name" id="name" required
+		data-validation-required-message="Please enter your name" />
+		<p class="help-block"></p>
+		</div>
+		</div>
+		<div class="control-group">
+		<div class="controls">
+		<input type="email" class="form-control input-text" placeholder="Email"
+		id="email" required
+		data-validation-required-message="Please enter your email" />
+		</div>
+		</div>
+
+		<div class="control-group">
+		<div class="controls">
+		<textarea rows="10" cols="100" class="form-control input-text"
+		placeholder="Message" id="message" required
+		data-validation-required-message="Please enter your message" minlength="5"
+		data-validation-minlength-message="Min 5 characters"
+		maxlength="999" style="resize:none"></textarea>
+		</div>
+		</div>
+		<div id="success"> </div> <!-- For success/fail messages -->
+		<button type="submit" class="btn btn-primary input-btn pull-right">Send</button><br />
+		</form>
+		  </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="container">
+    <div class="footer_bottom" align="center">Copyright &copy; 2020.山东大学热科学与工程研究中心 All rights reserved.版权所有 </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="{% static './js/jquery-1.11.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static './js/bootstrap.min.js'%}"></script>
+<script type="text/javascript" src="{% static './js/jquery-scrolltofixed.js'%}"></script>
+<script type="text/javascript" src="{% static './js/jquery.nav.js'%}"></script>
+<script type="text/javascript" src="{% static './js/jquery.easing.1.3.js'%}"></script>
+<script type="text/javascript" src="{% static './js/jquery.isotope.js'%}"></script>
+<script src="{% static './js/fancybox/jquery.fancybox.pack.js'%}" type="text/javascript"></script>
+<script type="text/javascript" src="{% static './js/wow.js'%}"></script>
+ <script src="{% static './contact/jqBootstrapValidation.js'%}"></script>
+ <script src="{% static './contact/contact_me.js'%}"></script>
+<script type="text/javascript" src="{% static './js/custom.js'%}"></script>
+
+</body>
+</html>
