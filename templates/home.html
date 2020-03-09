@@ -5,7 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
 <title>网站主页</title>
-<link rel="shortcut icon" href="{% static './img/Electron_shell_001_Hydrogen_-_no_label.png' %}" type="image/x-icon">
+
+<link rel="shortcut icon" href="{% static './img/shorticon.png' %}" type="image/x-icon">
 <link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{% static './js/fancybox/jquery.fancybox.css' %}" type="text/css" media="screen" />
 <link href="{% static './css/style.css' %}" rel="stylesheet" type="text/css">
@@ -24,6 +25,23 @@
  
 </head>
 <body>
+{% if '恭喜' in call_back %}
+ <div class="alert alert-success alert-dismissable" style="text-align: center">
+	<button type="button" class="close" data-dismiss="alert"
+			aria-hidden="true">
+		&times;
+	</button>
+	<p style="display: inline-block">{{call_back}}</p>
+</div>
+{% elif '遗憾' in call_back %}
+ <div class="alert alert-danger alert-dismissable" style="text-align: center">
+	<button type="button" class="close" data-dismiss="alert"
+			aria-hidden="true">
+		&times;
+	</button>
+	<p style="display: inline-block">{{call_back}}</p>
+</div>
+{% endif %}
 
 <!--导航栏Header_section-->
 
@@ -39,11 +57,11 @@
 			<ul class="nav navbar-nav" id="mainNav">
 			  <li class="active"><a style="font-size: 2em; font-weight: lighter" href="#hero_section" class="scroll-link">首页</a></li>
 			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '研究方向' %}" class="scroll-link">研究方向</a></li>
-			  <li><a style="font-size: 2em; font-weight: lighter" href="#service" class="scroll-link">成员介绍</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '成员介绍' %}" class="scroll-link">成员介绍</a></li>
 			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '新闻' %}" class="scroll-link">氢能资讯</a></li>
-			  <li><a style="font-size: 2em; font-weight: lighter" href="#clients" class="scroll-link">研究成果</a></li>
-			  <li><a style="font-size: 2em; font-weight: lighter" href="#team" class="scroll-link">课题组新闻</a></li>
-			  <li><a style="font-size: 2em; font-weight: lighter" href="#contact" class="scroll-link">联系我们</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '研究成果' %}" class="scroll-link">研究成果</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '课题组动态' %}" class="scroll-link">课题组动态</a></li>
+			  <li><a style="font-size: 2em; font-weight: lighter" href="{% url '联系我们' %}" class="scroll-link">联系我们</a></li>
 			</ul>
       </div>
 	 </nav>
@@ -93,7 +111,7 @@
               <h2>山东大学热科学与工程研究中心 <br> <strong>课题组网站</strong></h2>
                 <div class="underline"></div>
               <p>瞻天下以為師 歷寒暑求自成 沐風雨而芬芳<br/> </p>
-              <a href="#service" class="read_more2">探索更多</a> </div>
+              <a href="#aboutUs" class="read_more2">探索更多</a> </div>
         </div>
 
   <!-- 左右切换按钮 -->
@@ -274,41 +292,34 @@ p{
     <div class="section-title">
       <h2>氢能资讯</h2>
         <h6>分享与氢能的安全应用相关的技术和资讯，关注学术和行业动态  </h6>
+
+
     <!--/Title -->
 
   </div>
   <!-- Container -->
 
   <!-- 按钮 -->
-  <div class="portfolio">
+    <table class="table table-hover">
+        {% for foo in homes.all %}
+    <thread >
+    <tr >
+        <th scope="col" >
+            <div style="padding-left: 50px;padding-right: 50px">
+            <div style="float:left"><a style="font-weight:lighter;font-size: 1.2vmax" href="news/{{foo.id}}">◆ &nbsp;{{ foo.title }}</a></div>
+            <div style="float:right"><p>{{ foo.create_time }}</p> </div>
+            </div>
+        </th>
+    </tr>
+    </thread>
+    {% endfor %}
+    </table>
 
-    <div id="filters" class="sixteen columns">
-      <ul class="clearfix">
-        <li><a id="all" href="#" data-filter="*" class="active">
-          <h5>All</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".prototype">
-          <h5>Prototype</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".design">
-          <h5>Design</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".android">
-          <h5>Android</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".appleIOS">
-          <h5>Apple IOS</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".web">
-          <h5>Web App</h5>
-          </a></li>
-      </ul>
-    </div>
-    <!--/Portfolio Filters -->
-  </div>
+
   <!--正文预留 -->
   <div id="project_container">
     <div class="clear"></div>
+
       <br>
       <br>
       <br>
@@ -328,7 +339,7 @@ p{
     <section class="page_section contact" id="contact">
       <div class="contact_section">
         <h2>联系我们</h2>
-	<h6>如果您有合作想或者想要与我们取得联系，请留下您的信息和联系方式</h6>
+	<h6>如果您有合作意向或者想要与我们取得联系，请留下您的信息和联系方式</h6>
 
       </div>
       <div class="row">
@@ -348,29 +359,21 @@ p{
                             </div>
                             <div class="detail">
                                 <h4>公众号</h4>
-                                <a href="#"><img src="{% static './img/erweima.jpg' %}"
+                                <a href="https://mp.weixin.qq.com/s/PBb6U-9gdJzQ30sYHjlP8Q"><img src="{% static './img/erweima.jpg' %}"
                   width="40%" alt="erweima"></a>
                             </div>
                         </div>
-
-
-
-          <ul class="social_links">
-            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
-          </ul>
         </div>
         <div class="col-lg-8 wow fadeInLeft delay-06s">
           <div class="form">
 
 		  		<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-		<form name="sentMessage" id="contactForm"  novalidate>
-		<h3>Contact Form</h3>
+		<form name="sentMessage" id="contactForm"  method="post" action="" novalidate>
+         {% csrf_token %}
+		<h3 style="color: whitesmoke">Contact Form</h3><br>
 		<div class="control-group">
 		<div class="controls">
-		<input type="text" class="form-control input-text"
+		<input name='姓名'type="text" class="form-control input-text"
 		placeholder="Full Name" id="name" required
 		data-validation-required-message="Please enter your name" />
 		<p class="help-block"></p>
@@ -378,7 +381,7 @@ p{
 		</div>
 		<div class="control-group">
 		<div class="controls">
-		<input type="email" class="form-control input-text" placeholder="Email"
+		<input name='邮箱'type="email" class="form-control input-text" placeholder="Email"
 		id="email" required
 		data-validation-required-message="Please enter your email" />
 		</div>
@@ -386,7 +389,7 @@ p{
 
 		<div class="control-group">
 		<div class="controls">
-		<textarea rows="10" cols="100" class="form-control input-text"
+		<textarea name='正文'rows="10" cols="100" class="form-control input-text"
 		placeholder="Message" id="message" required
 		data-validation-required-message="Please enter your message" minlength="5"
 		data-validation-minlength-message="Min 5 characters"
@@ -394,8 +397,8 @@ p{
 		</div>
 		</div>
 		<div id="success"> </div> <!-- For success/fail messages -->
-		<button type="submit" class="btn btn-primary input-btn pull-right">Send</button><br />
-		</form>
+		<button type="submit button" class="btn btn-primary input-btn pull-right">Send</button>
+        </form>
 		  </div>
         </div>
       </div>
@@ -405,6 +408,19 @@ p{
     <div class="footer_bottom" align="center">Copyright &copy; 2020.山东大学热科学与工程研究中心 All rights reserved.版权所有 </div>
   </div>
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script type="text/javascript" src="{% static './js/jquery-1.11.0.min.js' %}"></script>
 <script type="text/javascript" src="{% static './js/bootstrap.min.js'%}"></script>
@@ -417,6 +433,7 @@ p{
  <script src="{% static './contact/jqBootstrapValidation.js'%}"></script>
  <script src="{% static './contact/contact_me.js'%}"></script>
 <script type="text/javascript" src="{% static './js/custom.js'%}"></script>
+
 
 </body>
 </html>

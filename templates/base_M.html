@@ -9,13 +9,11 @@
                 flex-direction: column;/*灵活的项垂直显示*/}
         #content{flex: 1;}
         #footer{height: 80px;
-            background-color: dodgerblue;}
+            background-color: #0d78e6;}
     </style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
-<title>{% block 标题 %}
-title
-{% endblock %}</title>
+<title>成员介绍</title>
 <link rel="shortcut icon" href="{% static './img/shorticon.png' %}" type="image/x-icon">
 <link href="{% static './css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{% static './js/fancybox/jquery.fancybox.css' %}" type="text/css" media="screen" />
@@ -51,7 +49,7 @@ title
 			  <li class="{% block 成员介绍 %}#{% endblock %}"><a style="font-size: 2em; font-weight: lighter" href="{% url '成员介绍' %}" class="scroll-link">成员介绍</a></li>
 			  <li class="{% block 氢能资讯 %}#{% endblock %}"><a style="font-size: 2em; font-weight: lighter" href="{% url '新闻' %}" class="scroll-link">氢能资讯</a></li>
 			  <li class="{% block 研究成果  %}#{% endblock %}"><a style="font-size: 2em; font-weight: lighter" href="{% url '研究成果' %}" class="scroll-link">研究成果</a></li>
-			  <li class="{% block 课题组动态 %}#{% endblock %}"><a style="font-size: 2em; font-weight: lighter" href="{% url '课题组动态' %}" class="scroll-link">课题组动态</a></li>
+			  <li class="{% block 课题组新闻 %}#{% endblock %}"><a style="font-size: 2em; font-weight: lighter" href="{% url '课题组动态' %}" class="scroll-link">课题组动态</a></li>
 			  <li class="{% block 联系我们  %}#{% endblock %}"><a style="font-size: 2em; font-weight: lighter" href="{% url '联系我们' %}" class="scroll-link">联系我们</a></li>
 			</ul>
       </div>
@@ -93,14 +91,14 @@ title
     text-indent:2em;
 }
 </style>
-        <div class="container" align="center" style="width: 90vw ;padding-top: 100px;padding-bottom: 100px">
-            <div class="card">
-  <div class="card-body" >
+        <div class="container" align="center" style="width: 90vw ;padding-top: 50px;padding-bottom: 100px">
+
+
 {% block 主体 %}
 
 {% endblock 主体 %}
 
-  </div>
+
 </div>
         </div>
     </div>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load  static %}
+{% block 标题 %}
+联系我们
+{% endblock %}
+{% block 联系我们 %}
+active
+{% endblock %}
+{% block 主体 %}
+    <div class="row1">
+<div class="col-md-12" style="font-size: 2vh;line-height: 2vh">
+<div class="col-md-8" >
+     <img src="{% static './img/map.png' %}" alt="map">
+</div>
+   <div class="col-md-4">
+<p><b>实验室地址</b></p><br>
+<p>山东省济南市历下区山东大学千佛山校区</p><br>
+<p>教学1号楼三层</p><br>
+<p>邮编：250101</p><br>
+<p><b>通信地址</b></p><br>
+<p>山东省济南市</p><br>
+<p>山东大学热科学与工程研究中心</p><br>
+<p>邮箱：abc@sdu.edu.cn</p><br>
+<p>电话:+86 531 88399000 </p><br>
+<p>传真：+86 531 88393000</p><br>
+<p><b>相关链接</b></p><br>
+    <p><a href="https://www.sdu.edu.cn/">山东大学</a></p><br>
+     <p><a href="https://www.tsinghua.edu.cn/">清华大学</a></p><br>
+     <p><a href="http://sts.sdu.edu.cn/">山东大学热科学与工程研究中心</a></p><br>
+     <p><a href="http://www.most.gov.cn/">中华人民共和国科学技术部</a></p><br>
+</div>
+</div>
+    </div>
+    <div class="row2">
+    <div class="col-md-3">
+        <img src="{% static './img/erweima.jpg' %}" alt="erweima" width="200">
+    </div>
+    <div class="col-md-4" style="margin-top: 35px">
+        <h3>欢迎关注“氢安全”公众号</h3>
+        <p style="text-align: left">“氢安全”旨在分享与氢能的安全应用先关的技术和资讯
+        ，关注学术和行业动态，提供交流与合作平台，助力氢能在
+        中国的推广和应用。</p>
+        <a href="https://www.rsrczp.sdu.edu.cn/">山东大学招聘信息</a><br>
+        <a href="https://www.yz.sdu.edu.cn/">山东大学研究生招生信息</a>
+
+    </div>
+    </div>
+{% endblock %}

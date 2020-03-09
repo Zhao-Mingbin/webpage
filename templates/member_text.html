@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load  static %}
-{% block 氢能资讯 %}
+{% block 成员介绍 %}
 active
 {% endblock %}
 {% block 标题 %}
-氢能资讯
+active
 {% endblock %}
 {{ form.media }}
 
@@ -12,10 +12,11 @@ active
     <div style="padding-left: 150px;padding-right: 150px
     ;padding-top: 100px;padding-bottom: 100px">
     <h1 style="padding-bottom: 10px;color: #0d78e6">{{name}}</h1>
-    <small>{{ time }}</small>
+    <small>{{ grade }}</small><br>
+        <img src="{{ picture }}" alt="picture">
         {% autoescape off %}
 
-    {{ form }}
+    {{ content }}
             <br>
             <br>
             <br>

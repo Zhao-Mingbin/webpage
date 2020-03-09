@@ -21,17 +21,8 @@ from django.urls import path, include
 from django2_DjangoUeditor import settings
 from blog import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('ueditor/', include('DjangoUeditor.urls')),
-    path('', views.home,name='主页'),
-    path('base/', views.base, name='基础'),
-    path('intro/', views.intro, name='研究方向'),
-    path('news/',include('blog.urls')),
-    path('knews/',include('blog.urlsknews')),
-    path('aboutus/',views.aboutus,name='联系我们'),
-    path('results/',views.results,name='研究成果'),
-    path('members/',include('blog.urlsmembers')),
-
+    path('', views.k_news,name='课题组动态'),
+    path('<int:foo_id>/',views.k_news_text,name='课题组内容'),
 ]
 
 if settings.DEBUG:

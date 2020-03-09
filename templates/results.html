@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block 研究成果 %}
+active
+{% endblock %}
+{% block 标题 %}
+研究成果
+{% endblock %}
+{% block 主体 %}
+ <h1 style="color: dodgerblue;; padding: 30px;padding-bottom:0px;font-size: 2vmax;">研究成果</h1>
+<small>课题组发表的学术论文以及专利等内容</small>
+{% for foo in result.all %}
+    <p style=" text-align:left;line-height:1.5vmax;font-weight:lighter;font-size: 1.2vmax ;padding: 20px"> <a href="{{ foo.urls }}">[{{ forloop.counter }}]、{{ foo.content }}</a></p>
+
+{% endfor %}
+
+{% endblock %}
